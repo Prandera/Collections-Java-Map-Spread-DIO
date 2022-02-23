@@ -16,7 +16,7 @@ public class LancamentoDados {
 
         Random random = new Random();
         List<Integer> lancamentoDado = new ArrayList<>();
-        Integer um, dois, tres, quatro, cinco, seis;
+        int um, dois, tres, quatro, cinco, seis;
         um = dois = tres = quatro = cinco = seis = 0;
         int lineBreaker = 1;
 
@@ -31,21 +31,33 @@ public class LancamentoDados {
 
         for (Integer lancamento : lancamentoDado) {
             switch (lancamento) {
-                case (1): um++; break;
-                case (2): dois++; break;
-                case (3): tres++; break;
-                case (4): quatro++; break;
-                case (5): cinco++; break;
-                case (6): seis++; break;
+                case (1):
+                    um++;
+                    break;
+                case (2):
+                    dois++;
+                    break;
+                case (3):
+                    tres++;
+                    break;
+                case (4):
+                    quatro++;
+                    break;
+                case (5):
+                    cinco++;
+                    break;
+                case (6):
+                    seis++;
+                    break;
             }
         }
 
         System.out.println("\nTotal para cada valor: ");
-        System.out.println("Nº 1:" + um);
-        System.out.println("Nº 2:" + dois);
-        System.out.println("Nº 3:" + tres);
-        System.out.println("Nº 4:" + quatro);
-        System.out.println("Nº 5:" + cinco);
-        System.out.println("Nº 6:" + seis);
+        System.out.println("Nº1: " + um);
+        System.out.println("Nº2: " + dois);
+        System.out.println("Nº3 : " + tres);
+        System.out.println("Nº4: " + quatro);
+        System.out.println("Nº5: " + cinco);
+        System.out.println("Nº6: " + seis);
     }
 }
