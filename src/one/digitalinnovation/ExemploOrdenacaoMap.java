@@ -15,30 +15,30 @@ import java.util.*;
 public class ExemploOrdenacaoMap {
     public static void main(String[] args) {
         System.out.println("ORDEM ALEATÓRIA");//HashMap
-        Map<String, Livro> livros= new HashMap<>(){{
-            put("J. R. R. Tolkien",new Livro("Silmarillion", 353));
-            put("Caldela, Leonel",new Livro("Trilogia Tormenta", 1824));
-            put("Brown, Dan",new Livro("O Código Da Vinci", 540));
+        Map<String, Livro> livros = new HashMap<>() {{
+            put("J. R. R. Tolkien", new Livro("Silmarillion", 353));
+            put("Caldela, Leonel", new Livro("Trilogia Tormenta", 1824));
+            put("Brown, Dan", new Livro("O Código Da Vinci", 540));
         }};
-        for (Map.Entry<String, Livro> livroTemp: livros.entrySet()) {
+        for (Map.Entry<String, Livro> livroTemp : livros.entrySet()) {
             System.out.println(livroTemp.getKey() + " - " + livroTemp.getValue().getNome());
         }
         System.out.println("----------------------------------");
 
         System.out.println("ORDEM INSERÇÃO");//Linked
-        Map<String, Livro> livrosLinked = new LinkedHashMap<>(){{
-            put("J. R. R. Tolkien",new Livro("Silmarillion", 353));
-            put("Caldela, Leonel",new Livro("Trilogia Tormenta", 1824));
-            put("Brown, Dan",new Livro("O Código Da Vinci", 540));
+        Map<String, Livro> livrosLinked = new LinkedHashMap<>() {{
+            put("J. R. R. Tolkien", new Livro("Silmarillion", 353));
+            put("Caldela, Leonel", new Livro("Trilogia Tormenta", 1824));
+            put("Brown, Dan", new Livro("O Código Da Vinci", 540));
         }};
-        for (Map.Entry<String, Livro> livroTemp: livrosLinked.entrySet()) {
+        for (Map.Entry<String, Livro> livroTemp : livrosLinked.entrySet()) {
             System.out.println(livroTemp.getKey() + " - " + livroTemp.getValue().getNome());
         }
         System.out.println("----------------------------------");
 
         System.out.println("ORDEM ALFABÉTICA AUTORES");//Tree
         Map<String, Livro> livrosTree = new TreeMap<>(livrosLinked);
-        for (Map.Entry<String, Livro> livroTemp: livrosTree.entrySet()) {
+        for (Map.Entry<String, Livro> livroTemp : livrosTree.entrySet()) {
             System.out.println(livroTemp.getKey() + " - " + livroTemp.getValue().getNome());
         }
         System.out.println("----------------------------------");
@@ -46,7 +46,7 @@ public class ExemploOrdenacaoMap {
         System.out.println("ORDEM ALFABÉTICA NOME DOS LIVROS");
         Set<Map.Entry<String, Livro>> livrosSetNome = new TreeSet<>(new ComparatorNome());
         livrosSetNome.addAll(livros.entrySet());//Relembrando, o entrySet devolve um Set.
-        for (Map.Entry<String, Livro> livroTemp: livrosSetNome) {
+        for (Map.Entry<String, Livro> livroTemp : livrosSetNome) {
             System.out.println(livroTemp.getKey() + " - " + livroTemp.getValue().getNome());
         }
         System.out.println("----------------------------------");
@@ -54,14 +54,14 @@ public class ExemploOrdenacaoMap {
         System.out.println("ORDEM NÚMERO DE PAGINAS");
         Set<Map.Entry<String, Livro>> livrosSetPaginas = new TreeSet<>(new ComparatorPaginas());
         livrosSetPaginas.addAll(livrosSetNome);
-        for (Map.Entry<String, Livro> livroTemp: livrosSetPaginas) {
+        for (Map.Entry<String, Livro> livroTemp : livrosSetPaginas) {
             System.out.println(livroTemp.getKey() + " - " + livroTemp.getValue().getNome());
         }
         System.out.println("----------------------------------");
     }
 }
 
-class ComparatorNome implements Comparator<Map.Entry<String, Livro>>{
+class ComparatorNome implements Comparator<Map.Entry<String, Livro>> {
 
     @Override
     public int compare(Map.Entry<String, Livro> l1, Map.Entry<String, Livro> l2) {
@@ -69,7 +69,7 @@ class ComparatorNome implements Comparator<Map.Entry<String, Livro>>{
     }
 }
 
-class ComparatorPaginas implements Comparator<Map.Entry<String, Livro>>{
+class ComparatorPaginas implements Comparator<Map.Entry<String, Livro>> {
 
     @Override
     public int compare(Map.Entry<String, Livro> l1, Map.Entry<String, Livro> l2) {
